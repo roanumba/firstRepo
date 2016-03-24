@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fLoad">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-controller="fileLoadCtrl">
+
+<div ep-file-upload="fileOption"></div>
+<button ng-click="loadFile()">Upload</button>
+<textarea ng-model="textArea" cols="30" rows="10"></textarea>
+<div ng-repeat="aFile in filesToUpload">
+    {{$index + 1}}) - {{aFile.name}}
+</div>
+<button ng-click="sendAll()">Send</button>
+<button ng-click="clearAll()">Clear</button>
+
+<div ep-file-upload="fileOption1"></div>
+<button ng-click="loadFile1()">Upload</button>
+<textarea ng-model="textArea1" cols="50" rows="10"></textarea>
+</body>
+<script type="text/javascript" src="../../lib/js/underscore.js"></script>
+<script type="text/javascript" src="../../lib/js/underscore.string.js"></script>
+<script src="../../lib/js/jquery.js"></script>
+<script src="../../lib/js/angular.js"></script>
+<script src="../../contract-manager/module/ep-components.js"></script>
+
+<script type="text/javascript">
+    angular.module('fLoad',['ep-components']).
+            controller('fileLoadCtrl',function($scope){
+                $scope.fileOption = {
+                    multiple:true,
+//                    accept:'application/vnd.ms-excel'
+                };
+                $scope.filesToUpload = [];
+                $scope.clearAll = function () {
+                    $scope.textArea="TestData";
+                    $scope.filesToUpload.splice(0,$scope.filesToUpload.length)
+                };
+
+                $scope.sendAll = function () {
+                    $scope.filesToUpload.forEach(function(f){
+                        $scope.textArea+="\n++++++++++++++++++++++++++++++"+ f.data;
+                    })
+                };
+                var fd = new FormData();
+
+                $scope.textArea="TestData";
+                $scope.loadFile = function () {
+/*
+                    $scope.fileOption.startFileUpload(function(data){
+                         $scope.textArea=data;
+                    });
+*/
+                    $scope.fileOption.startFileUpload(function(data,fileInfo){
+                        data = data.slice(data.indexOf(',') + 1);
+                                        fileInfo.data = data;
+                        $scope.filesToUpload.push(fileInfo);
+                    })
+
+                };
+                $scope.fileOption1 = {};
+                 $scope.textArea1="TestData1";
+                 $scope.loadFile1 = function () {
+                     $scope.fileOption1.startFileUpload(function(data){
+                          $scope.textArea1=data;
+                     });
+                 };
+
+            });
+</script>
+
+</html>

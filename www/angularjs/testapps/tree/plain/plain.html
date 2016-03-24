@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>A Tree from plain HTML Lists</title>
+		<style type="text/css">
+/*			body {
+				font-family:verdana;
+				font-size:12px;
+			}*/
+			li {
+			     	cursor:pointer;
+				display:block;
+				width:100px;
+			}
+			.Folder {
+			}
+			.ExpandCollapse {
+				float:left;
+				margin-right:5px;
+				width:8px;
+			}
+			ul {
+				list-style-type:none;
+			}
+		</style>
+<!--
+		<style type="text/css" media="all">
+			@import url("skypoet.css");
+		</style>
+		<script type="text/javascript" src="skypoet.js"></script>
+	-->
+		<script type="text/javascript">
+
+			function takeAction(e) {
+				var node = e.srcElement == undefined ? e.target : e.srcElement;
+				var id = node.getAttribute("id");
+				if (id != null && id.indexOf("Folder") > -1) {
+					if (node.innerHTML == "-") {
+						node.innerHTML = "+";
+						document.getElementById("ExpandCollapse" + id).style.display = "none";
+					} else if (node.innerHTML == "+") {
+						node.innerHTML = "-";
+						document.getElementById("ExpandCollapse" + id).style.display = "block";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul onclick="takeAction(event);">
+			<li><div id="Folder1" class="ExpandCollapse">-</div><div class="Folder">Folder 1</div></li>
+			<ul id="ExpandCollapseFolder1">
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
+			<li><div id="Folder2" class="ExpandCollapse">-</div><div class="Folder">Folder 2</div></li>
+			<ul id="ExpandCollapseFolder2">
+				<li>Item 4</li>
+				<li>Item 5</li>
+				<li><div id="Folder3" class="ExpandCollapse">-</div><div class="Folder">Folder 3</div></li>
+				<ul id="ExpandCollapseFolder3">
+					<li>Item 6</li>
+					<li>Item 7</li>
+					<li>Item 8</li>
+					<li>Item 9</li>
+				</ul>
+			</ul>
+			<li>Item 10</li>
+			<li>Item 11</li>
+			<li>Item 12</li>
+			<li>Item 13</li>
+		</ul>
+	</body>
+</html>

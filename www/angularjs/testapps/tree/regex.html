@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    var re = /item\.entity\.([\w\.\[\]]+)/g;
+    var str = 'Testing item.entity.test.1 and {{item.entity.jj}} string "item.entity.y.x.z[5]"';
+
+    var regExMatches=function(re,str) {
+        var m=[];
+        var res;
+        while (res = re.exec(str)) {
+            m.push(res[1]);
+        }
+        return m;
+    };
+    console.log(regExMatches(re,str));
+
+</script>
+
+</body>
+</html>

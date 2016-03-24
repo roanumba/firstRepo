@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../lib/js/jquery.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
+    <script type="text/javascript" src="js/jspdf.debug.js"></script>
+    <script type="text/javascript">
+        function showPDF() {
+            var pdf = new jsPDF('p','pt','a4');
+            var options = {
+                     pagesplit: true
+                };
+
+
+         pdf.addHTML($("body"),options,
+                 function() {
+//         	var string = pdf.output('dataurl');
+//         	$('.preview-pane').attr('src', string);
+                     pdf.save("test.pdf");
+         });
+         //pdf.save("data.pdf")
+        }
+
+    </script>
+</head>
+<body>
+      hello world
+<div class="preview-pane"></div>
+<button onclick="showPDF()">PDF</button>
+</body>
+</html>

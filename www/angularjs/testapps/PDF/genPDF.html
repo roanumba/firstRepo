@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pdfApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script type="text/javascript" src="../../lib/js/underscore.js"></script>
+    <script type="text/javascript" src="../../lib/js/underscore.string.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery.js"></script>
+    <script type="text/javascript" src="../PDF/js/jspdf.debug.js"></script>
+
+    <script type="text/javascript" src="../../lib/js/angular.js"></script>
+    <script src="../../contract-manager/module/ep-components.js"></script>
+
+    <script type="text/javascript">
+        angular.module("pdfApp",["ep-components"]).controller("pdfCtrl",function($scope,pdfService){
+        $scope.options={};
+        $scope.demoFromHTML=function (e) {
+//            $scope.options.addDoc();
+            var pdf=pdfService.createPDF();
+            pdf.open();
+            pdf.addDoc("body");
+            pdf.addDoc("#fromHTMLtestdiv");
+            pdf.addDoc("#fromHTMLtestdiv");
+            pdf.close();
+        }
+
+        })
+
+    </script>
+</head>
+<body ng-controller="pdfCtrl">
+      <div id="fromHTMLtestdiv" >
+          Hello PDF
+          <h1>This is H1 text</h1>
+      </div>
+      <button ng-click="demoFromHTML()" class="button">Run Code</button>
+</body>
+</html>

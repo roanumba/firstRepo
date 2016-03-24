@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tree</title>
+    <!--<link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />-->
+    <!--<link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.css" />-->
+      <!--<link type="text/css" rel="stylesheet" href="styles/bootstrap.custom.css" />-->
+      <!--<link type="text/css" rel="stylesheet" href="styles/bootstrap.custom.css" />-->
+    <link type="text/css" rel="stylesheet" href="styles/tbtree.css" />
+    <style type="text/css">
+      body {
+        padding:2em;
+      }
+      #centerme {
+        width:60%;
+        margin:auto;
+      }
+      #filter {
+        width:99%;
+      }
+      .tree-container {
+        border:1px solid silver;
+        padding:1em;
+        margin: 0.5em 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="centerme">
+      <h1>tbtree</h1>
+      <!--
+      <form>
+        <input type="search" id="filter" placeholder="this doesn't work yet" disabled />
+      </form>
+      -->
+      <hr />
+      <h3>TV Shows</h3>
+      <div id="tvshows" class="tree-container"></div>
+      <h3>Performing Artists</h3>
+      <div id="artists" class="tree-container"></div>
+    </div>
+
+    <!-- load the data... yes, it is a global object -->
+    <script src="scripts/tvshows.js"></script>
+    <script src="scripts/artists.js"></script>
+
+    <!-- with require.js -->
+    <!--<script src="lib/require-2.1.5.js" data-main="scripts/main"></script>-->
+
+    <!-- without require.js -->
+    <script src="lib/jquery-1.9.1.js"></script>
+    <script src="lib/underscore-1.4.4.js"></script>
+    <script src="scripts/tbtree.js"></script>
+    <script>
+      $().ready(function () {
+        window.tvShowTree = tbtree('#tvshows');
+        window.tvShowTree.on('loaded', function () {
+          console.log('TV show tree has data');
+        });
+        window.tvShowTree.load(window.tvshows);
+        window.tvShowTree.on('selected', function (e) {
+          console.log(e);
+        });
+
+        window.artistTree = tbtree('#artists');
+        window.artistTree.load(window.artists);
+        window.artistTree.on('expanded', function (e) {
+          console.log(e);
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+<i class="tree-nav-icon fa-folder-open open-branch fa fa-lg"></i>
+<div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem2.renaming">Root</div>
+<div class="tree-template"></div>

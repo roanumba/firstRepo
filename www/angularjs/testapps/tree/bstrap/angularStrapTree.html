@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="strapTree">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../lib/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../../lib/css/angular-ui.css"/>
+
+    <link rel="stylesheet" href="../../../lib/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="../../../lib/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../../../contract-manager/css/timetrax.css"/>
+
+    <link rel="stylesheet" href="../../../contract-manager/css/tree.css"/>
+    <style type="text/css">
+        .tree-template i {
+            margin-right:5px;
+        }
+    </style>
+    <script type="text/javascript">
+        function contextMenuClicked(){
+            alert('i')
+            return true;
+        }
+    </script>
+</head>
+<!--<body ng-controller="mainCtrl" oncontextmenu="if(contextMenuClicked())return false;" >-->
+<body ng-controller="mainCtrl" >
+
+<div ng-controller="tree1Ctrl">
+    <div ep-tree="treeOpts1" style="background-color: #fff"></div>
+    Tree 1 {{treeOpts1.selectedItem.fileName}} <p>
+</div>
+
+<div ng-controller="tree2Ctrl">
+    <div ep-tree="treeOpts2" style="background-color: #fff"></div>
+    tree2 {{treeOpts2.selectedItem.fileName}} <p>
+</div>
+
+<script type="text/javascript" src="../../../lib/js/underscore.js"></script>
+<script type="text/javascript" src="../../../lib/js/underscore.string.js"></script>
+<script type="text/javascript" src="../../../lib/js/jquery.js"></script>
+
+<script type="text/javascript" src="../../../lib/js/angular.js"></script>
+<script type="text/javascript" src="../../../lib/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../lib/js/ui-bootstrap-tpls.js"></script>
+
+<script type="text/javascript" src="../../../contract-manager/module/ep-components.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+
+</html>

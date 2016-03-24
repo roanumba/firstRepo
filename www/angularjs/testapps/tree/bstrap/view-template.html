@@ -1,0 +1,245 @@
+<div class="css-treeview">
+    <ul>
+        <li><input class="check-box-value" type="checkbox" id="item-0"/><label for="item-0">This Folder is Closed By Default</label>
+            <ul>
+                <li><input class="check-box-value" type="checkbox" id="item-0-0"/><label for="item-0-0">Ooops! A Nested Folder</label>
+                    <ul>
+                        <li><input class="check-box-value" type="checkbox" id="item-0-0-0"/><label for="item-0-0-0">Look Ma - No Hands!</label>
+                            <ul>
+                                <li><a href="./">First Nested Item</a></li>
+                                <li><a href="./">Second Nested Item</a></li>
+                                <li><a href="./">Third Nested Item</a></li>
+                                <li><a href="./">Fourth Nested Item</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./">Item 1</a></li>
+                        <li><a href="./">Item 2</a></li>
+                        <li><a href="./">Item 3</a></li>
+                    </ul>
+                </li>
+                <li><input class="check-box-value" type="checkbox" id="item-0-1"/><label for="item-0-1">Yet Another One</label>
+                    <ul>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                    </ul>
+                </li>
+                <li><input class="check-box-value" type="checkbox" id="item-0-2" disabled="disabled"/><label for="item-0-2">Disabled Nested
+                    Items</label>
+                    <ul>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                    </ul>
+                </li>
+                <li><a href="./">item</a></li>
+                <li><a href="./">item</a></li>
+                <li><a href="./">item</a></li>
+                <li><a href="./">item</a></li>
+            </ul>
+        </li>
+        <li><input class="check-box-value" type="checkbox" id="item-1" checked="checked"/><label for="item-1">This One is Open by Default...</label>
+            <ul>
+                <li><input class="check-box-value" type="checkbox" id="item-1-0"/><label for="item-1-0">And Contains More Nested
+                    Items...</label>
+                    <ul>
+                        <li><a href="./">Look Ma - No Hands</a></li>
+                        <li><a href="./">Another Item</a></li>
+                        <li><a href="./">And Yet Another</a></li>
+                    </ul>
+                </li>
+                <li><a href="./">Lorem</a></li>
+                <li><a href="./">Ipsum</a></li>
+                <li><a href="./">Dolor</a></li>
+                <li><a href="./">Sit Amet</a></li>
+            </ul>
+        </li>
+        <li><input class="check-box-value" type="checkbox" id="item-2"/><label for="item-2">Can You Believe...</label>
+            <ul>
+                <li><input class="check-box-value" type="checkbox" id="item-2-0"/><label for="item-2-0">That This Treeview...</label>
+                    <ul>
+                        <li><input class="check-box-value" type="checkbox" id="item-2-2-0"/><label for="item-2-2-0">Does Not Use Any
+                            JavaScript...</label>
+                            <ul>
+                                <li><a href="./">But Relies Only</a></li>
+                                <li><a href="./">On the Power</a></li>
+                                <li><a href="./">Of CSS3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./">Item 1</a></li>
+                        <li><a href="./">Item 2</a></li>
+                        <li><a href="./">Item 3</a></li>
+                    </ul>
+                </li>
+                <li><input class="check-box-value" type="checkbox" id="item-2-1"/><label for="item-2-1">This is a Folder With...</label>
+                    <ul>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+                    </ul>
+                </li>
+                <li><input class="check-box-value" type="checkbox" id="item-2-2" disabled="disabled"/><label for="item-2-2">Disabled Nested
+                    Items</label>
+                    <ul>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                        <li><a href="./">item</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="./">First Nested Item</a></li>
+        <li><a href="./">Second Nested Item</a></li>
+        <li><a href="./">Third Nested Item</a></li>
+        <li><a href="./">Fourth Nested Item</a></li>
+    </ul>
+
+</div>
+
+<script type="text/javascript">
+    var tData=[
+        {label:"This Folder is Closed By Default"},
+        {label:"This One is Open by Default...",expanded:true},
+        {label:"Can You Believe..."}
+    ]
+
+</script>
+
+<ul class="branch-container ng-scope tree-container">
+    <li ng-mousedown="nodeClicked($event,true)" class="tree-branch tree-node" tree-item-id="tree1_treeItem2"><i
+            class="tree-nav-icon fa-folder-open open-branch fa fa-lg"></i><!-- ngIf: !epTree.tree1_treeItem2.renaming -->
+        <div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem2.renaming">Root</div>
+        <!-- end ngIf: !epTree.tree1_treeItem2.renaming --><!-- ngIf: epTree.tree1_treeItem2.renaming -->
+        <div class="tree-template"></div>
+        <ul class="branch-container">
+            <li ng-mousedown="nodeClicked($event,true)" class="tree-branch tree-node" tree-item-id="tree1_treeItem3"
+                style="display: list-item;"><i class="tree-nav-icon fa fa-folder fa-lg"></i><!-- ngIf: !epTree.tree1_treeItem3.renaming -->
+                <div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem3.renaming">1hr
+                    Sideletter
+                </div>
+                <!-- end ngIf: !epTree.tree1_treeItem3.renaming --><!-- ngIf: epTree.tree1_treeItem3.renaming -->
+                <div class="tree-template"></div>
+                <ul class="branch-container">
+                    <li ng-mousedown="nodeClicked($event,false)" class="tree-leaf tree-node"
+                        tree-item-id="tree1_treeItem4" style="display: none;"><i
+                            class="fa fa-file-o fa-lg tree-nav-icon"></i><!-- ngIf: !epTree.tree1_treeItem4.renaming -->
+                        <div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem4.renaming">test
+                        </div>
+                        <!-- end ngIf: !epTree.tree1_treeItem4.renaming -->
+                        <!-- ngIf: epTree.tree1_treeItem4.renaming -->
+                        <div class="tree-template">
+                            <div><i class="fa fa-send-o"></i><i class="fa fa-history"></i><i
+                                    ng-click="epTree.tree1_treeItem4.isIntegratedToTestSuite = !epTree.tree1_treeItem4.isIntegratedToTestSuite"
+                                    ng-model="epTree.tree1_treeItem4.isIntegratedToTestSuite"
+                                    ng-class="{'fa fa-check-square-o':epTree.tree1_treeItem4.isIntegratedToTestSuite, 'fa fa-square-o':(!epTree.tree1_treeItem4.isIntegratedToTestSuite)}"
+                                    class="ng-pristine ng-untouched ng-valid fa fa-square-o"></i></div>
+                        </div>
+                    </li>
+                    <li ng-mousedown="nodeClicked($event,true)" class="tree-branch tree-node"
+                        tree-item-id="tree1_treeItem5" style="display: none;"><i
+                            class="tree-nav-icon fa-folder-open open-branch fa fa-lg"></i><!-- ngIf: !epTree.tree1_treeItem5.renaming -->
+                        <div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem5.renaming">Another
+                            Child 6
+                        </div>
+                        <!-- end ngIf: !epTree.tree1_treeItem5.renaming -->
+                        <!-- ngIf: epTree.tree1_treeItem5.renaming -->
+                        <div class="tree-template"></div>
+                        <ul class="branch-container">
+                            <li ng-mousedown="nodeClicked($event,false)" class="tree-leaf tree-node"
+                                tree-item-id="tree1_treeItem6" style="display: list-item;"><i
+                                    class="fa fa-file-o fa-lg tree-nav-icon"></i><!-- ngIf: !epTree.tree1_treeItem6.renaming -->
+                                <div class="tree-node-name ng-binding ng-scope"
+                                     ng-if="!epTree.tree1_treeItem6.renaming">Another Child 8
+                                </div>
+                                <!-- end ngIf: !epTree.tree1_treeItem6.renaming -->
+                                <!-- ngIf: epTree.tree1_treeItem6.renaming -->
+                                <div class="tree-template">
+                                    <div><i class="fa fa-send-o"></i><i class="fa fa-history"></i><i
+                                            ng-click="epTree.tree1_treeItem6.isIntegratedToTestSuite = !epTree.tree1_treeItem6.isIntegratedToTestSuite"
+                                            ng-model="epTree.tree1_treeItem6.isIntegratedToTestSuite"
+                                            ng-class="{'fa fa-check-square-o':epTree.tree1_treeItem6.isIntegratedToTestSuite, 'fa fa-square-o':(!epTree.tree1_treeItem6.isIntegratedToTestSuite)}"
+                                            class="ng-pristine ng-untouched ng-valid fa fa-square-o"></i></div>
+                                </div>
+                            </li>
+                            <li ng-mousedown="nodeClicked($event,false)" class="tree-leaf tree-node"
+                                tree-item-id="tree1_treeItem7" style="display: list-item;"><i
+                                    class="fa fa-file-o fa-lg tree-nav-icon"></i><!-- ngIf: !epTree.tree1_treeItem7.renaming -->
+                                <div class="tree-node-name ng-binding ng-scope"
+                                     ng-if="!epTree.tree1_treeItem7.renaming">Another Child 9
+                                </div>
+                                <!-- end ngIf: !epTree.tree1_treeItem7.renaming -->
+                                <!-- ngIf: epTree.tree1_treeItem7.renaming -->
+                                <div class="tree-template">
+                                    <div><i class="fa fa-send-o"></i><i class="fa fa-history"></i><i
+                                            ng-click="epTree.tree1_treeItem7.isIntegratedToTestSuite = !epTree.tree1_treeItem7.isIntegratedToTestSuite"
+                                            ng-model="epTree.tree1_treeItem7.isIntegratedToTestSuite"
+                                            ng-class="{'fa fa-check-square-o':epTree.tree1_treeItem7.isIntegratedToTestSuite, 'fa fa-square-o':(!epTree.tree1_treeItem7.isIntegratedToTestSuite)}"
+                                            class="ng-pristine ng-untouched ng-valid fa fa-square-o"></i></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li ng-mousedown="nodeClicked($event,false)" class="tree-leaf tree-node" tree-item-id="tree1_treeItem8"
+                style="display: list-item;"><i class="fa fa-file-o fa-lg tree-nav-icon"></i><!-- ngIf: !epTree.tree1_treeItem8.renaming -->
+                <div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem8.renaming">ASA
+                    Television
+                </div>
+                <!-- end ngIf: !epTree.tree1_treeItem8.renaming --><!-- ngIf: epTree.tree1_treeItem8.renaming -->
+                <div class="tree-template">
+                    <div><i class="fa fa-send-o"></i><i class="fa fa-history"></i><i
+                            ng-click="epTree.tree1_treeItem8.isIntegratedToTestSuite = !epTree.tree1_treeItem8.isIntegratedToTestSuite"
+                            ng-model="epTree.tree1_treeItem8.isIntegratedToTestSuite"
+                            ng-class="{'fa fa-check-square-o':epTree.tree1_treeItem8.isIntegratedToTestSuite, 'fa fa-square-o':(!epTree.tree1_treeItem8.isIntegratedToTestSuite)}"
+                            class="ng-pristine ng-untouched ng-valid fa fa-square-o"></i></div>
+                </div>
+            </li>
+            <li ng-mousedown="nodeClicked($event,false)" class="tree-leaf tree-node" tree-item-id="tree1_treeItem9"
+                style="display: list-item;"><i class="fa fa-file-o fa-lg tree-nav-icon"></i><!-- ngIf: !epTree.tree1_treeItem9.renaming -->
+                <div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem9.renaming">Another Child
+                    18
+                </div>
+                <!-- end ngIf: !epTree.tree1_treeItem9.renaming --><!-- ngIf: epTree.tree1_treeItem9.renaming -->
+                <div class="tree-template">
+                    <div><i class="fa fa-send-o"></i><i class="fa fa-history"></i><i
+                            ng-click="epTree.tree1_treeItem9.isIntegratedToTestSuite = !epTree.tree1_treeItem9.isIntegratedToTestSuite"
+                            ng-model="epTree.tree1_treeItem9.isIntegratedToTestSuite"
+                            ng-class="{'fa fa-check-square-o':epTree.tree1_treeItem9.isIntegratedToTestSuite, 'fa fa-square-o':(!epTree.tree1_treeItem9.isIntegratedToTestSuite)}"
+                            class="ng-pristine ng-untouched ng-valid fa fa-square-o"></i></div>
+                </div>
+            </li>
+            <li ng-mousedown="nodeClicked($event,false)" class="tree-leaf tree-node" tree-item-id="tree1_treeItem10"
+                style="display: list-item;"><i class="fa fa-file-o fa-lg tree-nav-icon"></i><!-- ngIf: !epTree.tree1_treeItem10.renaming -->
+                <div class="tree-node-name ng-binding ng-scope" ng-if="!epTree.tree1_treeItem10.renaming">Another Child
+                    19
+                </div>
+                <!-- end ngIf: !epTree.tree1_treeItem10.renaming --><!-- ngIf: epTree.tree1_treeItem10.renaming -->
+                <div class="tree-template">
+                    <div><i class="fa fa-send-o"></i><i class="fa fa-history"></i><i
+                            ng-click="epTree.tree1_treeItem10.isIntegratedToTestSuite = !epTree.tree1_treeItem10.isIntegratedToTestSuite"
+                            ng-model="epTree.tree1_treeItem10.isIntegratedToTestSuite"
+                            ng-class="{'fa fa-check-square-o':epTree.tree1_treeItem10.isIntegratedToTestSuite, 'fa fa-square-o':(!epTree.tree1_treeItem10.isIntegratedToTestSuite)}"
+                            class="ng-pristine ng-untouched ng-valid fa fa-square-o"></i></div>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>

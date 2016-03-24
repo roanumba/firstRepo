@@ -1,2 +1,2 @@
 # firstRepo
-Testing
+This is my fist git repository

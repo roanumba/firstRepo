@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+      <!--<script src="../lib/css/ui-grid.css"></script>-->
+      <link rel="stylesheet" href="ui-grid.css"/>
+      <style type="text/css">
+          .grid {
+            width: 800px;
+            height: 400px;
+          }
+      </style>
+  </head>
+  <body>
+    <div ng-controller="MainCtrl">
+      <button id="expandAll" type="button" class="btn btn-success" ng-click="expandAll()">Expand All</button>
+      <button id="toggleFirstRow" type="button" class="btn btn-success" ng-click="toggleRow(0)">Toggle First Row</button>
+      <button id="toggleSecondRow" type="button" class="btn btn-success" ng-click="toggleRow(1)">Toggle Second Row</button>
+      <button id="toggleExpandNoChildren" type="button" class="btn btn-success" ng-click="toggleExpandNoChildren()">Toggle Expand No Children</button>
+      <div id="grid1" ui-grid="gridOptions" ui-grid-tree-view class="grid"></div>
+        <button ng-click="demoFromHTML()" class="button">PDF</button>
+    </div>
+
+    <script type="text/javascript" src="../../lib/js/underscore.js"></script>
+    <script type="text/javascript" src="../../lib/js/underscore.string.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery.js"></script>
+    <script type="text/javascript" src="../../contract-manager/module/jspdf.debug.js"></script>
+    <script type="text/javascript" src="../../contract-manager/module/html2canvas.js"></script>
+
+    <script src="../../lib/js/angular.js"></script>
+    <script src="../../lib/js/angular-touch.js"></script>
+    <script src="../../lib/js/angular-animate.js"></script>
+    <script src="ui-grid.js"></script>
+    <script src="../../contract-manager/module/ep-components.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

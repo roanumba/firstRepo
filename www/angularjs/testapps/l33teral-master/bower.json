@@ -1,0 +1,22 @@
+{
+  "name": "l33teral",
+  "version": "2.0.5",
+  "location": "git://github.com/nicholascloud/l33teral",
+  "author": "Nicholas Cloud",
+  "description": "functions to help deal with object literals",
+  "keywords": ["literals", "objects", "utilities"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nicholascloud/l33teral"
+  },
+  "dependencies": {
+    "underscore": "1.5.2"
+  },
+  "devDependencies": {},
+  "main": "./build/l33teral-latest.js",
+  "ignore": [
+    "./test/**/*",
+    ".jshintignore",
+    ".jshintrc"
+  ]
+}

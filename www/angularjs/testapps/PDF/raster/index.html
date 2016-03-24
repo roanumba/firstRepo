@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rasterizeHTML.js example</title>
+    <script src="../../../lib/js/jquery.js"></script>
+    <script type="text/javascript" src="../js/rasterizeHTML.allinone.js"></script>
+    <!--<script type="text/javascript" src="../js/rasterizeHTML.js"></script>-->
+
+    <script type="text/javascript" src="../js/jspdf.debug.js"></script>
+    <script type="text/javascript">
+
+        var loaded = function () {
+        };
+
+        function pdf() {
+            var canvas = $("#canvas")[0];
+            var context = canvas.getContext('2d');
+
+            var div = $('#divid').html();
+            context.rotate(2,2)
+            rasterizeHTML.drawHTML(div, canvas, function (a) {
+                var dataUrl = canvas.toDataURL("image/png");
+//               $('body').append(a)
+            });
+
+
+        }
+        function drawCloud(context) {
+            // draw cloud
+            context.beginPath();
+            context.moveTo(170, 80);
+            context.bezierCurveTo(130, 100, 130, 150, 230, 150);
+            context.bezierCurveTo(250, 180, 320, 180, 340, 150);
+            context.bezierCurveTo(420, 150, 420, 120, 390, 100);
+            context.bezierCurveTo(430, 40, 370, 30, 340, 50);
+            context.bezierCurveTo(320, 5, 250, 20, 250, 50);
+            context.bezierCurveTo(200, 5, 150, 20, 170, 80);
+            context.closePath();
+            context.lineWidth = 5;
+            context.fillStyle = '#8ED6FF';
+            context.fill();
+            context.strokeStyle = '#0000ff';
+            context.stroke();
+        }
+        function genImage() {
+            var canvas = $('#canvas')[0];
+            var context = canvas.getContext('2d');
+            drawCloud(context);
+
+
+            // save canvas image as data url (png format by default)
+            var dataURL = canvas.toDataURL();
+
+            // set canvasImg image src to dataURL
+            // so it can be saved as an image
+            document.getElementById('canvasImg').src = dataURL;
+            /*            var doc = new jsPDF({
+             unit: 'px',
+             format: 'a4'
+             });
+             doc.addImage(dataURL, 'JPEG', 20, 20, 300, 300);
+             doc.save();*/
+
+        }
+    </script>
+</head>
+<body onload="loaded()">
+<canvas id="canvas" width="500" height="600"></canvas>
+
+<div id="divid" style="font-size: 20px;">Some <span style="color: green">HTML</span>
+    with an image
+</div>
+<img id="canvasImg" alt="Right click to save me!">
+<button onclick="pdf()">Show</button>
+</body>
+</html>

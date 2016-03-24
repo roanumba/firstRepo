@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myTree">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="tree.css"/>
+    <link rel="stylesheet" href="../../../lib/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../../../lib/css/angular-csp.css"/>
+</head>
+<body ng-controller="treeCtrl">
+<p>The original version is available on
+    <a href="http://experiments.wemakesites.net/css3-treeview.html" target="_blank">this page</a>.</p>
+
+<div tree-view="treeOpts">
+</div>
+  {{treeText}}
+<script type="text/javascript" src="../../../lib/js/angular.js"></script>
+<script type="text/javascript">
+    var app = angular.module('myTree', [])
+            .controller('treeCtrl', function ($scope) {
+                $scope.treeOpts = [{
+                    label: 'Root', children: [
+                        {
+                            label: "This Folder is Closed By Default", children: [
+                            {label: "Can You Believe...",
+                                template:'<span>This is just text&nbsp;<i class="fa fa-trash-o fa-2x"></i>&nbsp;<input type="text" ng-model="treeText"/></span>',
+//                                templateUrl:"view-template.html"
+                            },
+                            {label: "This One is Open by Default..."}
+                        ], expanded: true
+                        },
+                        {label: "This One is Open by Default...", expanded: true},
+                        {label: "Can You Believe..."}]
+                }];
+                $scope['doAlert'] = function () {
+//                    alert('Hi')
+                };
+                $scope.treeText = "test";
+
+
+            })
+</script>
+<script type="text/javascript" src="treeModule.js"></script>
+
+</body>
+</html>
